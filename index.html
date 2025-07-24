@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <title>Pranav Bawa - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -15,106 +15,102 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #0e0e0e;
-      color: #fff;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #ffffff;
+      line-height: 1.6;
     }
 
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #111;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .logo {
       font-size: 1.5rem;
       font-weight: 700;
-      color: #00d4ff;
+      background: linear-gradient(90deg, #00d4ff, #00ff88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       cursor: pointer;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     nav a {
       text-decoration: none;
-      color: #ffffff;
+      color: #fff;
       font-weight: 500;
-      transition: color 0.3s;
+      position: relative;
     }
 
-    nav a:hover {
-      color: #00d4ff;
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: #00d4ff;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     .hero {
       height: 100vh;
-      width: 100vw;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 2rem;
       text-align: left;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: radial-gradient(circle at center, rgba(0,212,255,0.2) 0%, rgba(0,212,255,0) 100%);
-      animation: pulse 6s infinite;
-      z-index: 0;
-    }
-
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-        opacity: 0.4;
-      }
-      50% {
-        transform: scale(1.2);
-        opacity: 0.8;
-      }
+      padding: 2rem;
+      background: radial-gradient(circle at center, rgba(0, 212, 255, 0.05), transparent);
     }
 
     .hero-content {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 3rem;
-      z-index: 1;
+      background-color: #1c1c1c;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
+      gap: 1.5rem;
+      max-width: 600px;
+      text-align: center;
     }
 
     .hero h1 {
-      font-size: 3rem;
-      background: linear-gradient(45deg, #00d4ff, #00ff88);
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #00d4ff, #00ff88);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-right: 2rem;
     }
 
     .hero img {
-      width: 200px;
-      height: 200px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #00d4ff;
       object-fit: cover;
-      border-radius: 10px;
-      border: 3px solid #00d4ff;
     }
 
     section {
-      padding: 6rem 2rem 4rem;
+      padding: 5rem 2rem 4rem;
       max-width: 800px;
       margin: auto;
     }
@@ -125,24 +121,50 @@
       color: #00d4ff;
     }
 
+    p {
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
     .contact-links {
       display: flex;
-      gap: 1.5rem;
-      margin-top: 1rem;
       flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 1rem;
     }
 
     .contact-links a {
-      color: #00d4ff;
+      background: #00d4ff20;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
       text-decoration: none;
-      font-size: 1rem;
+      color: #00d4ff;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .contact-links a:hover {
+      background: #00d4ff40;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
       background-color: #111;
-      color: #888;
+      color: #aaa;
+      margin-top: 4rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    @media (min-width: 768px) {
+      .hero-content {
+        flex-direction: row;
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
     }
   </style>
 </head>
@@ -160,14 +182,14 @@
 
   <section class="hero" id="top">
     <div class="hero-content">
+      <img src="https://gcdnb.pbrd.co/images/Dx2wcCXXuRmn.jpg" alt="Pranav Bawa" />
       <h1>Pranav Bawa</h1>
-      <img src="https://gcdnb.pbrd.co/images/Dx2wcCXXuRmn.jpg" alt="Your Photo" />
     </div>
   </section>
 
   <section id="introduction">
     <h2>Introduction</h2>
-    <p>Hellooo! I am a student of the college VESIT, currently in my sophomore year, pursuing a degree in Electronics and Computer science. My CGPA till 2nd semester is 9.65. I have recently started to develop interest in learning new programming languages and solve real life problems using it. Aspiring to become an entrepreneur in fintech field using my skills learned during my journey.  </p>
+    <p>Hellooo! I am a student of the college VESIT, currently in my sophomore year, pursuing a degree in Electronics and Computer science. My CGPA till 2nd semester is 9.65. I have recently started to develop interest in learning new programming languages and solve real life problems using it. Aspiring to become an entrepreneur in fintech field using my skills learned during my journey.</p>
   </section>
 
   <section id="hobbies">
